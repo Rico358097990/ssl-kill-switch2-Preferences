@@ -68,7 +68,7 @@ static BOOL shouldHookFromPreference(NSString *preferenceSetting)
         }
         //Rico 
         BOOL appEnabled = [[plist objectForKey:[NSString stringWithFormat:@"SSLKillSwitch-%@",bundleId]] boolValue];
-        if (appEnabled) {
+        if (appEnabled == YES) {
             SSKLog(@"Not hooking excluded bundle: %@", bundleId);
             shouldHook = NO;
         }
